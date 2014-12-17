@@ -1,0 +1,18 @@
+extends layout
+
+block content
+ h1= title
+ form(action="/search?name=")
+   input(type="text" name="name" placeholder="Search by Username")
+   input(type="submit" value="Submit")
+ <br/>
+ .table-responsive
+  table.table.table-striped.table-bordered
+   each person in tweets
+    tr
+    td
+     img(src='#{person.user.profile_image_url}')
+    td
+     | <strong>#{person.user.screen_name}</strong>
+    td
+     | #{person.text}

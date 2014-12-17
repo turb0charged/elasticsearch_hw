@@ -1,0 +1,12 @@
+extends layout
+
+block content
+ h1 Results for #{result[0]._source.username}
+ .table-responsive
+  table.table.table-striped.table-bordered
+   each tweet in result
+    tr
+     td 
+      img(src='#{tweet._source.profileImg}')
+     td <strong>#{tweet._source.username}</strong>
+     td #{tweet._source.status}

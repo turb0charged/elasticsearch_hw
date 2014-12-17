@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .container
+   .jumbotron
+    h1.text-center Twitter + Elastic Search
+  .container
+   form(action="/stream")
+    button.btn.btn-primary Get Tweets
+  <br/><br/>
+  .container
+    form(action="/search?name=")
+     input(type="text" name="name" placeholder="Search by Username")
+     input(type="submit" value="Submit")
+
+    
